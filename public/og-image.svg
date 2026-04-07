@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#07C160"/>
+      <stop offset="100%" style="stop-color:#04B03F"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="60" y="60" width="1080" height="510" rx="24" fill="white"/>
+  <text x="120" y="180" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="#1a1a1a">企小帮</text>
+  <text x="120" y="250" font-family="Arial, sans-serif" font-size="32" fill="#666666">专注深圳企业财税服务</text>
+  <line x1="120" y1="290" x2="300" y2="290" stroke="#07C160" stroke-width="4"/>
+  <text x="120" y="350" font-family="Arial, sans-serif" font-size="28" fill="#444444">代理记账 | 税务申报</text>
+  <text x="120" y="400" font-family="Arial, sans-serif" font-size="28" fill="#444444">工商变更 | 公司注册</text>
+  <text x="120" y="480" font-family="Arial, sans-serif" font-size="24" fill="#999999">8年+经验 | 500+客户 | 专业团队</text>
+  <g transform="translate(900, 160)">
+    <rect x="0" y="0" width="200" height="200" rx="16" fill="white"/>
+    <rect x="30" y="30" width="60" height="60" fill="#07C160"/>
+    <rect x="110" y="30" width="60" height="60" fill="#07C160"/>
+    <rect x="30" y="110" width="60" height="60" fill="#07C160"/>
+    <rect x="50" y="50" width="20" height="20" fill="white"/>
+    <rect x="130" y="50" width="20" height="20" fill="white"/>
+    <rect x="50" y="130" width="20" height="20" fill="white"/>
+    <rect x="90" y="90" width="20" height="20" fill="#07C160"/>
+  </g>
+  <text x="950" y="420" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1a1a1a" text-anchor="middle">扫码咨询</text>
+</svg>
