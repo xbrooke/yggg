@@ -34,6 +34,7 @@ import MobileMenu from '@/components/MobileMenu.vue'
 
 .main-content {
   min-height: calc(100vh - 120px);
-  padding-top: 80px;
+  padding-top: 64px;
+  background: linear-gradient(180deg, #f0fdf4 0%, #e8f5e9 40%, #ffffff 100%);
 }
 </style>

@@ -1,10 +1,8 @@
 <template>
-  <header class="header">
+  <header class="header" :class="headerClass">
     <div class="header-inner">
       <router-link to="/" class="logo">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="#07C160">
-          <path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/>
-        </svg>
+        <img src="/logo.png" alt="企小帮" width="24" height="24">
         <span>企小帮</span>
       </router-link>
       <nav class="nav">
@@ -24,6 +22,14 @@
 </template>
 
 <script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
+
+const headerClass = ref('gradient')
+
+const updateHeaderStyle = (e) => {
+  headerClass.value = e.detail
+}
+
 const goToContact = () => {
   window.dispatchEvent(new CustomEvent('show-wechat-qr'))
 }
@@ -31,6 +37,14 @@ const goToContact = () => {
 const toggleMobileMenu = () => {
   window.dispatchEvent(new CustomEvent('toggle-mobile-menu', { detail: true }))
 }
+
+onMounted(() => {
+  window.addEventListener('header-style-change', updateHeaderStyle)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('header-style-change', updateHeaderStyle)
+})
 </script>
 
 <style lang="scss" scoped>
@@ -39,10 +53,22 @@ const toggleMobileMenu = () => {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid #E5E5E5;
   z-index: 1000;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+
+  &.gradient {
+    background: transparent;
+  }
+
+  &.blur {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+  }
+
+  &.white {
+    background: #FFFFFF;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
 }
 
 .header-inner {
@@ -92,14 +118,14 @@ const toggleMobileMenu = () => {
   font-size: 14px;
   font-weight: 500;
   color: #FFFFFF;
-  background: linear-gradient(135deg, #07C160 0%, #04B03F 100%);
+  background: linear-gradient(135deg, #059669 0%, #07C160 50%, #04B03F 100%);
   border: none;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
 
   &:hover {
-    box-shadow: 0 4px 16px rgba(7, 193, 96, 0.3);
+    box-shadow: 0 4px 16px rgba(5, 150, 105, 0.3);
   }
 }
 
