@@ -24,4 +24,5 @@
     <rect x="90" y="90" width="20" height="20" fill="#07C160"/>
   </g>
   <text x="950" y="420" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1a1a1a" text-anchor="middle">扫码咨询</text>
+  <text x="600" y="570" font-family="Arial, sans-serif" font-size="18" fill="#AAAAAA" text-anchor="middle">github.com/xbrooke/yggg</text>
 </svg>
