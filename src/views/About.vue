@@ -292,30 +292,30 @@ const showWechat = () => {
 }
 
 .cta {
-  padding: 100px 0;
+  padding: 80px 0;
 }
 
 .cta-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 60px 80px;
-  background: linear-gradient(135deg, #07C160 0%, #04B03F 100%);
-  border-radius: 32px;
-  box-shadow: 0 20px 60px rgba(7, 193, 96, 0.25);
+  padding: 48px 60px;
+  background: linear-gradient(135deg, #059669 0%, #10B981 100%);
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(5, 150, 105, 0.2);
 }
 
 .cta-content {
   h2 {
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 700;
     color: #FFFFFF;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
 
   p {
-    font-size: 18px;
-    color: rgba(255, 255, 255, 0.85);
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.8);
   }
 }
 
@@ -323,20 +323,20 @@ const showWechat = () => {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 16px 32px;
-  font-size: 16px;
+  padding: 12px 28px;
+  font-size: 14px;
   font-weight: 600;
-  color: #07C160;
+  color: #059669;
   background: #FFFFFF;
   border: none;
-  border-radius: 50px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
   flex-shrink: 0;
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -379,20 +379,29 @@ const showWechat = () => {
 
 @media (max-width: 768px) {
   .page-header {
-    padding: 120px 0 60px;
+    padding: 100px 0 40px;
+
+    .container {
+      padding: 0 20px;
+    }
 
     h1 {
-      font-size: 36px;
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 14px;
     }
   }
 
   .stats-wrapper {
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 32px;
   }
 
   .stat-num {
-    font-size: 36px;
+    font-size: 32px;
   }
 
   .features-grid {
@@ -400,7 +409,7 @@ const showWechat = () => {
   }
 
   .cta-content h2 {
-    font-size: 28px;
+    font-size: 24px;
   }
 }
 </style>

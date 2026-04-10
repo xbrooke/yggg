@@ -52,12 +52,13 @@ const goToService = (id) => {
 
 <style lang="scss" scoped>
 .services-page {
-  background: #FFFFFF;
+  background: linear-gradient(165deg, #f0fdf4 0%, #ffffff 100%);
+  min-height: 100vh;
 }
 
 .page-header {
   position: relative;
-  padding: 160px 0 100px;
+  padding: 140px 0 70px;
   text-align: center;
   overflow: hidden;
 }
@@ -68,148 +69,188 @@ const goToService = (id) => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, #F0FDF4 0%, #FFFFFF 100%);
+  background: transparent;
   z-index: 0;
-}
 
-.bg-circle {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 0.5;
-
-  &.circle-1 {
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(7, 193, 96, 0.1) 0%, transparent 70%);
-    top: -150px;
-    right: -100px;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(5, 150, 105, 0.08) 0%, transparent 65%);
+    border-radius: 50%;
   }
 
-  &.circle-2 {
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(7, 193, 96, 0.08) 0%, transparent 70%);
-    bottom: -100px;
-    left: -50px;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 15%;
+    left: 8%;
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle, rgba(4, 176, 63, 0.06) 0%, transparent 65%);
+    border-radius: 50%;
   }
 }
 
 .page-header .container {
   position: relative;
   z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
 .page-tag {
   display: inline-block;
-  padding: 6px 16px;
-  background: linear-gradient(135deg, #07C160 0%, #04B03F 100%);
+  padding: 5px 14px;
+  background: linear-gradient(135deg, #059669 0%, #10B981 100%);
   color: #FFFFFF;
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 600;
-  border-radius: 50px;
-  margin-bottom: 20px;
+  border-radius: 4px;
+  margin-bottom: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .page-header h1 {
-  font-size: 48px;
+  font-size: 36px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #111827;
   letter-spacing: -0.02em;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 .page-header p {
-  font-size: 18px;
-  color: #888;
+  font-size: 15px;
+  color: #6b7280;
 }
 
 .page-content {
-  padding: 80px 0 120px;
+  padding: 40px 0 80px;
 }
 
 .services-list {
   max-width: 800px;
   margin: 0 auto;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+  padding: 8px 0;
 }
 
 .service-item {
   display: flex;
   align-items: center;
-  gap: 32px;
-  padding: 32px 0;
-  border-bottom: 1px solid #EEEEEE;
+  gap: 28px;
+  padding: 24px 32px;
+  border-bottom: 1px solid #f5f5f5;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 
   &:last-child {
     border-bottom: none;
   }
 
   &:hover {
+    background: #f9fafb;
+
     .item-number {
-      background: linear-gradient(135deg, #07C160 0%, #04B03F 100%);
+      background: linear-gradient(135deg, #059669 0%, #10B981 100%);
       color: #FFFFFF;
     }
 
     .item-arrow {
-      color: #07C160;
-      transform: translateX(8px);
+      color: #059669;
+      transform: translateX(4px);
     }
   }
 }
 
 .item-number {
-  font-size: 28px;
-  font-weight: 800;
-  color: #E5E5E5;
-  transition: all 0.3s ease;
+  font-size: 24px;
+  font-weight: 700;
+  color: #e5e7eb;
+  transition: all 0.25s ease;
   flex-shrink: 0;
-  width: 60px;
+  width: 48px;
 }
 
 .item-content {
   flex: 1;
 
   h3 {
-    font-size: 22px;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 4px;
   }
 
   p {
-    font-size: 15px;
-    color: #666666;
-    line-height: 1.6;
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.5;
   }
 }
 
 .item-arrow {
-  color: #CCCCCC;
-  transition: all 0.3s ease;
+  color: #d1d5db;
+  transition: all 0.25s ease;
   flex-shrink: 0;
 }
 
 @media (max-width: 768px) {
   .page-header {
-    padding: 120px 0 60px;
+    padding: 100px 0 40px;
+
+    .container {
+      padding: 0 20px;
+    }
 
     h1 {
-      font-size: 36px;
+      font-size: 24px;
+      margin-bottom: 8px;
     }
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .page-content {
+    padding: 20px 0 50px;
+  }
+
+  .services-list {
+    border-radius: 10px;
+    padding: 4px 0;
   }
 
   .service-item {
     flex-direction: column;
     text-align: center;
-    gap: 16px;
+    gap: 12px;
+    padding: 20px 20px;
 
     .item-number {
-      font-size: 24px;
+      font-size: 20px;
     }
 
     .item-arrow {
       display: none;
+    }
+  }
+
+  .item-content {
+    h3 {
+      font-size: 16px;
+    }
+
+    p {
+      font-size: 13px;
     }
   }
 }

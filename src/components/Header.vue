@@ -54,27 +54,27 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   z-index: 1000;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
 
   &.gradient {
     background: transparent;
   }
 
   &.blur {
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(8px);
   }
 
   &.white {
     background: #FFFFFF;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
   }
 }
 
 .header-inner {
-  max-width: 1100px;
+  max-width: 1080px;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 36px;
   height: 64px;
   display: flex;
   align-items: center;
@@ -85,12 +85,12 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 20px;
-  font-weight: 700;
-  color: #1a1a1a;
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
 
-  svg {
-    flex-shrink: 0;
+  img {
+    border-radius: 4px;
   }
 
   span {
@@ -100,32 +100,36 @@ onUnmounted(() => {
 
 .nav {
   display: flex;
-  gap: 32px;
+  gap: 28px;
 
   a {
-    font-size: 15px;
-    color: #666666;
+    font-size: 14px;
+    color: #6b7280;
     transition: color 0.2s ease;
 
     &:hover {
-      color: #07C160;
+      color: #059669;
+    }
+
+    &.router-link-active {
+      color: #059669;
     }
   }
 }
 
 .btn-primary {
-  padding: 8px 20px;
-  font-size: 14px;
+  padding: 8px 18px;
+  font-size: 13px;
   font-weight: 500;
   color: #FFFFFF;
-  background: linear-gradient(135deg, #059669 0%, #07C160 50%, #04B03F 100%);
+  background: linear-gradient(135deg, #059669 0%, #10B981 100%);
   border: none;
-  border-radius: 50px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 
   &:hover {
-    box-shadow: 0 4px 16px rgba(5, 150, 105, 0.3);
+    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.25);
   }
 }
 
@@ -145,11 +149,16 @@ onUnmounted(() => {
     display: block;
     width: 100%;
     height: 2px;
-    background: #1a1a1a;
+    background: #374151;
+    border-radius: 1px;
   }
 }
 
 @media (max-width: 768px) {
+  .header-inner {
+    padding: 0 16px;
+  }
+
   .nav {
     display: none;
   }

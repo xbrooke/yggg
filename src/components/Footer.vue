@@ -14,15 +14,15 @@
 
 <style lang="scss" scoped>
 .footer {
-  padding: 48px 0;
-  background: #FAFAFA;
-  border-top: 1px solid #E5E5E5;
+  padding: 40px 0;
+  background: #FFFFFF;
+  border-top: 1px solid #f0f0f0;
 }
 
 .footer-inner {
-  max-width: 1100px;
+  max-width: 1080px;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 36px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,38 +31,63 @@
 .footer-brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 
-  .brand-icon {
-    flex-shrink: 0;
+  img {
+    border-radius: 4px;
   }
 
   .brand-name {
-    font-size: 16px;
-    font-weight: 700;
-    color: #1a1a1a;
+    font-size: 15px;
+    font-weight: 600;
+    color: #111827;
   }
 
   .brand-dot {
-    color: #07C160;
+    color: #10B981;
+    font-weight: 300;
   }
 
   .brand-desc {
-    font-size: 14px;
-    color: #666666;
+    font-size: 13px;
+    color: #9ca3af;
   }
 }
 
 .footer-copy {
-  font-size: 14px;
-  color: #999999;
+  font-size: 13px;
+  color: #9ca3af;
 }
 
 @media (max-width: 768px) {
+  .footer {
+    padding: 32px 0;
+  }
+
   .footer-inner {
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
+    padding: 0 20px;
     text-align: center;
+  }
+
+  .footer-brand {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+
+    img {
+      display: none;
+    }
+  }
+
+  .brand-desc {
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .footer-copy {
+    font-size: 12px;
   }
 }
 </style>

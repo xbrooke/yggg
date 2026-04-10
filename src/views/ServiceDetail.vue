@@ -147,69 +147,90 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .service-detail {
-  background: #FFFFFF;
+  background: linear-gradient(165deg, #f0fdf4 0%, #ffffff 100%);
+  min-height: 100vh;
 }
 
 .page-header {
-  padding: 140px 0 80px;
+  padding: 120px 0 60px;
   text-align: center;
-  background: linear-gradient(180deg, #F0FDF4 0%, #FFFFFF 100%);
+  background: transparent;
 
-  h1 {
-    font-size: 42px;
-    font-weight: 700;
-    color: #1a1a1a;
-    letter-spacing: -0.02em;
-    margin-bottom: 16px;
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 40px;
   }
 
-  p {
-    font-size: 18px;
-    color: #666666;
+  h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #111827;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+
+  > .container > p {
+    font-size: 16px;
+    color: #6b7280;
   }
 }
 
 .page-content {
-  padding-bottom: 120px;
+  padding-bottom: 80px;
+  background: transparent;
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
 }
 
 .content-grid {
   display: grid;
-  grid-template-columns: 1fr 280px;
-  gap: 80px;
-  max-width: 1000px;
-  margin: 0 auto;
+  grid-template-columns: 1fr 240px;
+  gap: 32px;
+}
+
+.main-content {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 28px;
+  border: 1px solid #f0f0f0;
 }
 
 .content-section {
-  margin-bottom: 48px;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  margin-bottom: 28px;
+  border: none;
 
   &:last-child {
     margin-bottom: 0;
   }
 
   h2 {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 600;
-    color: #1a1a1a;
-    margin-bottom: 20px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #E5E5E5;
+    color: #111827;
+    margin-bottom: 14px;
   }
 
   p {
-    font-size: 16px;
-    color: #444444;
-    line-height: 1.8;
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.75;
   }
 }
 
 .target-list {
   li {
-    font-size: 16px;
-    color: #444444;
-    padding: 12px 0;
-    border-bottom: 1px solid #E5E5E5;
+    font-size: 14px;
+    color: #374151;
+    padding: 9px 0;
+    border-bottom: 1px solid #f5f5f5;
 
     &:last-child {
       border-bottom: none;
@@ -220,9 +241,9 @@ onMounted(() => {
 .flow-list {
   .flow-item {
     display: flex;
-    gap: 16px;
-    padding: 16px 0;
-    border-bottom: 1px solid #E5E5E5;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid #f5f5f5;
 
     &:last-child {
       border-bottom: none;
@@ -230,85 +251,172 @@ onMounted(() => {
   }
 
   .flow-num {
-    width: 32px;
-    height: 32px;
-    background: linear-gradient(135deg, #07C160 0%, #04B03F 100%);
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, #059669 0%, #10B981 100%);
     color: #FFFFFF;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     flex-shrink: 0;
   }
 
   .flow-info {
     h4 {
-      font-size: 17px;
+      font-size: 15px;
       font-weight: 500;
-      color: #1a1a1a;
-      margin-bottom: 4px;
+      color: #111827;
+      margin-bottom: 3px;
     }
 
     p {
-      font-size: 14px;
-      color: #999999;
+      font-size: 13px;
+      color: #9ca3af;
     }
   }
 }
 
 .sidebar {
   position: sticky;
-  top: 100px;
+  top: 84px;
   align-self: start;
 }
 
 .sidebar-card {
   text-align: center;
-  padding: 32px;
+  padding: 24px;
   background: #FFFFFF;
-  border-radius: 20px;
-  border: 1px solid #E5E5E5;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
 
   h3 {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
-    color: #1a1a1a;
-    margin-bottom: 20px;
+    color: #111827;
+    margin-bottom: 16px;
   }
 
   .qrcode-img {
-    width: 160px;
-    height: 160px;
-    margin: 0 auto 16px;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 12px;
     border-radius: 8px;
   }
 
   .wechat-id {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
-    color: #07C160;
+    color: #059669;
   }
 }
 
 @media (max-width: 768px) {
   .page-header {
-    padding: 120px 0 60px;
+    padding: 100px 0 36px;
+
+    .container {
+      padding: 0 20px;
+    }
 
     h1 {
-      font-size: 32px;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    > .container > p {
+      font-size: 14px;
+    }
+  }
+
+  .page-content {
+    padding-bottom: 50px;
+
+    .container {
+      padding: 0 20px;
     }
   }
 
   .content-grid {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 18px;
+  }
+
+  .main-content {
+    padding: 18px;
+    border-radius: 10px;
+  }
+
+  .content-section {
+    padding: 0;
+    margin-bottom: 20px;
+
+    h2 {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 13px;
+      line-height: 1.7;
+    }
+  }
+
+  .target-list {
+    li {
+      font-size: 13px;
+      padding: 7px 0;
+    }
+  }
+
+  .flow-list {
+    .flow-item {
+      gap: 10px;
+      padding: 10px 0;
+    }
+
+    .flow-num {
+      width: 26px;
+      height: 26px;
+      font-size: 12px;
+    }
+
+    .flow-info {
+      h4 {
+        font-size: 14px;
+        margin-bottom: 2px;
+      }
+
+      p {
+        font-size: 12px;
+      }
+    }
   }
 
   .sidebar {
     position: static;
+    order: -1;
+  }
+
+  .sidebar-card {
+    padding: 20px;
+    border-radius: 10px;
+
+    h3 {
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    .qrcode-img {
+      width: 120px;
+      height: 120px;
+    }
+
+    .wechat-id {
+      font-size: 13px;
+    }
   }
 }
 </style>
